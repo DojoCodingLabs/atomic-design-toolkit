@@ -33,7 +33,8 @@ dependencies:
     sdk: flutter
   widgetbook_annotation: ^3.10.0
   widgetbook: ">=3.23.0 <3.24.0"   # pin per the compatibility table
-  # THE single dependency that matters — the shared UI package, never the app:
+  # THE single dependency that matters — the shared UI package, never the app.
+  # Use ../../libs/{name}_ui when the monorepo uses a libs/ layout instead.
   {name}_ui:
     path: ../../packages/{name}_ui
 

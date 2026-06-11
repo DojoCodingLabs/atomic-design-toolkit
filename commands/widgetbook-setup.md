@@ -43,8 +43,8 @@ Classify what exists:
 **Never invent components.** Inventory what actually exists before generating a single story:
 
 ```bash
-# Widgets in the UI package, by atomic level
-find packages/*_ui/lib -name "*.dart" | grep -E "atoms|molecules|organisms|templates"
+# Widgets in the UI package, by atomic level (covers both packages/ and libs/ layouts)
+find packages/*_ui/lib libs/*_ui/lib -name "*.dart" 2>/dev/null | grep -E "atoms|molecules|organisms|templates"
 
 # Widgets the catalog already covers
 find apps/widgetbook/lib -name "*_use_case.dart"
@@ -85,7 +85,7 @@ Widgetbook minor versions raise the Flutter floor (e.g. widgetbook 3.24 requires
 
 Use the pubspec and `main.dart` templates from `${CLAUDE_PLUGIN_ROOT}/references/widgetbook-flutter-monorepo.md`. Non-negotiables:
 
-- **Depend on the UI package, not the app**: `{name}_ui: { path: ../../packages/{name}_ui }`
+- **Depend on the UI package, not the app**: `{name}_ui: { path: ../../packages/{name}_ui }` (or `../../libs/{name}_ui` — match the layout found in Step 1)
 - `MaterialThemeAddon` with the project's real light + dark themes — never `ThemeData()` defaults
 - A Showcase tab (design tokens: color scheme, typography, elevation) alongside the Widgetbook tab
 - Taxonomy (mono-pillar canon for Flutter monorepos):
