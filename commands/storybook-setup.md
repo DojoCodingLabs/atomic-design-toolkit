@@ -135,6 +135,8 @@ Present: coverage table (before → after) per pillar, taxonomy decisions made, 
 `/storybook-setup` is a **one-time bootstrap** — it stands up (or realigns) Storybook IA, design tokens, and title enforcement for a repo that has none or a drifted one. The recurring concerns live elsewhere; do not re-implement them here:
 
 - **Ongoing story coverage** (which components still lack a `.stories.tsx`, per pillar) → `/atomic-design-toolkit:storybook-audit`.
-- **Full component inventory + decomposition + design-system gap** → `/atomic-design-toolkit:audit`.
+- **Full component inventory + decomposition** → `/atomic-design-toolkit:component-audit`.
+- **Design-system gap** (catalog cross-reference) → `/atomic-design-toolkit:design-system-audit`.
+- **All four audit axes + unified report** → `/atomic-design-toolkit:audit` (the orchestrator).
 
 Run `storybook-setup` once to stand up the catalog, then `storybook-audit` on a cadence to drive coverage to 100% and hold it.

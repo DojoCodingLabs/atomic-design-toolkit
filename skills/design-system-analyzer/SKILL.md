@@ -34,7 +34,7 @@ You detected that the user wants to compare their project against a design syste
    | Vite + Vanilla | Bootstrap 5, Bulma, UIkit, Tailwind + HeroUI, Material Web components |
 
 3. **Suggest the dedicated command** for a full gap analysis:
-   > Use `/atomic-design-toolkit:audit :{system}` for a full gap analysis, or `/atomic-design-toolkit:audit :audit:{stack}:{system}` for combined component + bundle-health audit.
+   > Use `/atomic-design-toolkit:design-system-audit :{system}` for a focused design-system gap analysis, or `/atomic-design-toolkit:audit :audit:{stack}:{system}` for the combined component + bundle-health + enforcement + design-system audit (the orchestrator).
 
 4. **If the question is quick** (e.g. "does Carbon have a TreeView equivalent?"), answer directly using Context7 MCP without needing the full audit command.
 

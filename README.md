@@ -146,13 +146,28 @@ Catalogs marked ✅ are pre-compiled in `references/design-systems/`. The rest r
 
 ## What's Inside
 
-### Commands (3)
+### Commands (9)
+
+**Audit family** — `/audit` is the orchestrator; the four focused commands run standalone too:
 
 | Command | Description |
 |---------|-------------|
-| `/atomic-design-toolkit:generate <feature> [:<stack>]` | Generate a complete component hierarchy for a feature (Flutter and Vite) |
-| `/atomic-design-toolkit:audit [:<stack>] [:<system>] [:report]` | Scan codebase for decomposable components + bundle health + design system gap analysis. Optional `:report` emits a structured report file. |
-| `/atomic-design-toolkit:migrate [report-path] [:plan\|:execute] [:phase=N] [:linear]` | Consume an audit report and generate a phased remediation plan with per-phase checkpoints and re-audit verification |
+| `/atomic-design-toolkit:audit [:<stack>] [:<system>] [:report]` | **Orchestrator.** Runs the four focused audits + cross-references story coverage, composes the unified `:report` that `/migrate` consumes. |
+| `/atomic-design-toolkit:component-audit [:<stack>] [:report]` | Component inventory + classification (monoliths, misplaced, duplicated, inline, missing) — the V1-V3/V5 axis. |
+| `/atomic-design-toolkit:bundle-audit [:report]` | Vite bundle health — the ten signals (V4): duplicate deps, legacy `public/` assets, mixed majors, vendored libs, hashless assets, outdated deps, CI audit coverage, HMR, visual regression, dual lockfiles. |
+| `/atomic-design-toolkit:enforcement-audit [:report]` | Atomic-design enforcement (V7) — the four-cure defense-in-depth: hooks, `.atomic-design-rules.json`, agent rules, CI / pre-commit guards (E-findings). |
+| `/atomic-design-toolkit:design-system-audit [:<system>] [:<stack>] [:report]` | Design-system gap analysis — cross-reference against 16+ catalogs (Present / Missing / Partial / Extra / Mis-sourced). |
+| `/atomic-design-toolkit:storybook-audit [:pillar=<name>] [:report] [:generate]` | Story coverage per pillar — find renderable components without a co-located `.stories.tsx`. |
+
+**Setup + remediation:**
+
+| Command | Description |
+|---------|-------------|
+| `/atomic-design-toolkit:generate <feature> [:<stack>]` | Generate a complete component hierarchy for a feature (Flutter and Vite). |
+| `/atomic-design-toolkit:storybook-setup [pillar]` | One-time Storybook bootstrap with pillar-first atomic taxonomy, design tokens, and title enforcement. |
+| `/atomic-design-toolkit:migrate [report-path] [:plan\|:execute] [:phase=N] [:linear]` | Consume an audit report and generate a phased remediation plan with per-phase checkpoints and re-audit verification. |
+
+> The Flutter-specific `/atomic-design-toolkit:widgetbook-setup` rounds out the catalog tooling for Flutter monorepos.
 
 ### Skills (2)
 
@@ -265,9 +280,16 @@ atomic-design-toolkit/
 │   ├── plugin.json
 │   └── marketplace.json
 ├── commands/
-│   ├── generate.md          # Feature component generation (Flutter + Vite)
-│   ├── audit.md             # Codebase audit + bundle health + design system gaps + report emission
-│   └── migrate.md           # Phased remediation from audit reports
+│   ├── generate.md            # Feature component generation (Flutter + Vite)
+│   ├── audit.md               # Orchestrator: runs the focused audits + composes the unified report
+│   ├── component-audit.md     # Component inventory + classification (V1-V3, V5)
+│   ├── bundle-audit.md        # Vite bundle health — the ten signals (V4)
+│   ├── enforcement-audit.md   # Atomic-design enforcement — four-cure presence (V7)
+│   ├── design-system-audit.md # Design-system gap analysis (16+ catalogs)
+│   ├── storybook-audit.md     # Story coverage per pillar
+│   ├── storybook-setup.md     # One-time Storybook bootstrap (pillar-first taxonomy)
+│   ├── widgetbook-setup.md    # One-time Widgetbook bootstrap (Flutter monorepos)
+│   └── migrate.md             # Phased remediation from audit reports
 ├── skills/
 │   ├── design-system-analyzer/
 │   │   └── SKILL.md         # Auto-activates on DS discussions
