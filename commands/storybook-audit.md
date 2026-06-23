@@ -84,3 +84,7 @@ Write `.atomic-design-toolkit/reports/storybook-audit-{YYYYMMDD-HHMM}.md` with t
 - **CI gate** (`storybook-coverage.yml`) runs on the **diff** → blocks *new* story-less components.
 - **This command** runs on the **whole tree, per pillar** → surfaces the *existing* backlog the gate intentionally does not fail on.
 - Workflow: adopt the gate (stops the bleeding) → run this audit to drive coverage to 100% pillar by pillar → the gate keeps it there. Both are Cure 4a (the gate is the hook/CI; this is the discovery/remediation tool).
+
+## Initial setup
+
+This command assumes Storybook already exists and only measures coverage. Standing up Storybook the first time (IA, design tokens, title enforcement) is a one-time `/atomic-design-toolkit:storybook-setup`.
