@@ -1,8 +1,24 @@
+<p align="center">
+  <a href="https://dojocoding.io">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner-light.svg">
+      <img alt="atomic-design-toolkit by Dojo Coding: Atomic Design for Flutter and Vite" src="docs/assets/banner-light.svg" width="100%">
+    </picture>
+  </a>
+</p>
+
 # atomic-design-toolkit
+
+**A Claude Code plugin for builders on Flutter or Vite: audit your components, plan phased fixes and generate Atomic Design hierarchies.**
 
 Atomic Design toolkit for **Flutter** and **Vite** — decompose features into atoms, molecules, organisms, templates, and pages. Audit your codebase (including Vite bundle health: duplicates, hashless assets, mixed major versions, vendorized libs, dual lockfiles). Cross-reference against 18+ design systems. Drive phased remediation with `/migrate`.
 
 A Claude Code plugin by [Luis Andres Pena Castillo](https://github.com/lapc506).
+
+[![License: BSL 1.1](https://img.shields.io/badge/license-BSL%201.1-FF7151?labelColor=201E3D)](LICENSE) [![Version 1.2.0](https://img.shields.io/badge/version-1.2.0-FF7151?labelColor=201E3D)](.claude-plugin/plugin.json) [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-FF7151?labelColor=201E3D)](#install)
+
+[Install](#install) · [Quickstart](#quickstart) · [What's inside](#whats-inside) · [Report an issue](https://github.com/DojoCodingLabs/atomic-design-toolkit/issues/new)
 
 ## Install
 
@@ -297,4 +313,8 @@ atomic-design-toolkit/
 
 ## License
 
-[Business Source License 1.1](./LICENSE) — you may use, modify, and redistribute for non-competitive purposes. Converts to Non-Profit OSL 3.0 after 5 years.
+[Business Source License 1.1](./LICENSE) — you may use, modify, and redistribute for non-competitive purposes. Converts to Non-Profit OSL 3.0 after 5 years. Built by [Dojo Coding](https://dojocoding.io).
+
+<p align="center">
+  <a href="https://dojocoding.io"><img src="docs/assets/dojocoding-mark.png" alt="Dojo Coding" width="48"></a>
+</p>
