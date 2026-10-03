@@ -1,0 +1,12 @@
+name = "atomic-design-toolkit"
+tagline = "Atomic Design for [Flutter and Vite]"
+chips = ["6 commands / 2 skills"]
+meta = "Source available · Claude Code"
+tile = "/"
+
+[card]
+kind = "terminal"
+label = "Claude Code"
+status = "v1.2.0 · BSL 1.1"
+lines = ["/atomic-design-toolkit:audit", "/atomic-design-toolkit:migrate", "/atomic-design-toolkit:generate"]
+dim = "atoms · molecules · organisms"
